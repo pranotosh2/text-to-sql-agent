@@ -13,7 +13,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres:18
+        image: postgres:15
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
@@ -74,16 +74,16 @@ jobs:
       - name: Build and push backend image
         uses: docker/build-push-action@v5
         with:
-          context: ./backend
-          file: ./Dockerfile.backend
+          context: .                          # Fixed: Root context allows COPY backend/ to work
+          file: ./backend/Dockerfile.backend  # Points directly to the file inside backend/
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/text-to-sql-backend:latest
 
       - name: Build and push frontend image
         uses: docker/build-push-action@v5
         with:
-          context: ./frontend
-          file: ./Dockerfile.frontend
+          context: .                          # Fixed: Keeps alignment with root layout
+          file: ./frontend/Dockerfile.frontend # Points directly to the file inside frontend/
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/text-to-sql-frontend:latest
 
