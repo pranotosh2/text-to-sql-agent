@@ -3,8 +3,9 @@ import requests
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
+import os
 
-API_URL = "http://backend:8000"  # Docker; for local dev use http://localhost:8000
+API_URL = os.getenv("API_URL", "http://backend:8000")  # Docker; for local dev use http://localhost:8000
 
 # -----------------------------------------------------
 # Page Config
