@@ -2,10 +2,12 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY requirements.txt .
+# 1. Point to the frontend subfolder for requirements
+COPY frontend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+# 2. Copy the contents of the frontend subfolder into the container
+COPY frontend/ .
 
 EXPOSE 8501
 
