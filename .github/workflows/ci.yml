@@ -75,7 +75,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .                          # Fixed: Root context allows COPY backend/ to work
-          file: ./backend/Dockerfile.backend  # Points directly to the file inside backend/
+          file: Dockerfile.backend  # Points directly to the file inside backend/
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/text-to-sql-backend:latest
 
@@ -83,7 +83,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .                          # Fixed: Keeps alignment with root layout
-          file: ./frontend/Dockerfile.frontend # Points directly to the file inside frontend/
+          file: Dockerfile.frontend # Points directly to the file inside frontend/
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/text-to-sql-frontend:latest
 
