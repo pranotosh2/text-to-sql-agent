@@ -8,10 +8,12 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt .
+# 1. Update this path to point into the backend folder
+COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+# 2. Update this path to copy your backend code
+COPY backend/ .
 
 EXPOSE 8000
 
