@@ -38,7 +38,7 @@
 
 ## 🧠 Overview
 
-**Text-to-SQL Agent** is a production-ready AI application that allows users to query a PostgreSQL database using plain English. The system uses a **LangChain ReAct agent** powered by **Groq's LLaMA3-70b** model to introspect the live database schema, generate validated SQL, execute queries, and return results through an interactive Streamlit dashboard.
+**Text-to-SQL Agent** is a production-ready AI application that allows users to query a PostgreSQL database using plain English. The system uses a **LangChain ReAct agent** powered by **Groq's openai/gpt-oss-120b** model to introspect the live database schema, generate validated SQL, execute queries, and return results through an interactive Streamlit dashboard.
 
 > **Example:** Type *"Show top 10 customers by total order value"* → The agent reads the schema, writes the SQL, executes it, and displays a table + chart — no SQL knowledge required.
 
@@ -69,7 +69,7 @@ User (Browser)
 │  └─ Reads live schema from PostgreSQL   │
 │                                         │
 │  Tool 2: generate_sql                   │
-│  └─ Groq LLaMA3-70b writes SELECT SQL  │
+│  └─ Groq openai/gpt-oss-120b writes SELECT SQL  │
 │                                         │
 │  Tool 3: execute_sql                    │
 │  └─ Validates + runs query safely       │
@@ -107,7 +107,7 @@ GitHub Actions handles CI/CD → Docker Hub → Render.
 |---|---|
 | Frontend | Streamlit, Matplotlib |
 | Backend | FastAPI, Uvicorn |
-| AI Agent | LangChain, Groq (LLaMA3-70b) |
+| AI Agent | LangChain, Groq (openai/gpt-oss-120b) |
 | Database | PostgreSQL 15, SQLAlchemy |
 | Containerization | Docker, Docker Compose |
 | CI/CD | GitHub Actions |
@@ -238,7 +238,7 @@ python -m streamlit run app.py
 
 | Variable | Description | Example |
 |---|---|---|
-| `GROQ_API_KEY` | Groq API key for LLaMA3-70b | `gsk_xxx...` |
+| `GROQ_API_KEY` | Groq API key for openai/gpt-oss-120b| `gsk_xxx...` |
 | `DATABASE_URL` | PostgreSQL connection string | `postgresql://postgres:postgres@db:5432/northwind` |
 
 > ⚠️ Never commit your `.env` file. It is already in `.gitignore`.
@@ -334,10 +334,7 @@ git push main
 
 ```
 frontend/screenshots/
-├── dashboard.png
-├── results_table.png
-├── visualization.png
-└── sql_editor.png
+├── dashboard.png<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b4dad1fc-faed-4e1a-bbf9-3b50ea29e5f5" />
 ```
 
 ---
