@@ -11,7 +11,7 @@
 
 **Convert natural language questions into SQL queries and visualize results instantly using AI.**
 
-[Live Demo]([https://text-to-sql-frontend.onrender.com](https://text-to-sql-frontend-9wb2.onrender.com)) · [API Docs](https://text-to-sql-backend.onrender.com/docs) · [Report Bug](https://github.com/pranotosh2/text-to-sql-agent/issues)
+[Live Demo](https://text-to-sql-frontend-9wb2.onrender.com) · [API Docs](https://text-to-sql-backend.onrender.com/docs) · [Report Bug](https://github.com/pranotosh2/text-to-sql-agent/issues)
 
 </div>
 
