@@ -327,16 +327,6 @@ git push main
 > **Note:** Render free tier sleeps after 15 min of inactivity. First request after sleep takes ~30 seconds to wake up.
 
 ---
-
-## 🖼 Screenshots
-
-> Add screenshots of your running app here after deployment.
-
-```
-frontend/screenshots/
-├── dashboard.png<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b4dad1fc-faed-4e1a-bbf9-3b50ea29e5f5" />
-```
-
 ---
 
 ## 🔑 Key Design Decisions
